@@ -2,9 +2,20 @@
   "name": "redux-socket-dispatch",
   "version": "0.1.0",
   "description": "Redux middleware that dispatches actions to a websocket.",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "init": "mkdir dist",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean && npm run init",
+    "build": "npx babel src --out-dir dist"
+  },
+  "nyc": {
+    "exclude": [
+      "dist"
+    ]
   },
   "repository": {
     "type": "git",
@@ -15,5 +26,11 @@
   "bugs": {
     "url": "https://github.com/0xc14m1z/redux-socket-dispatch/issues"
   },
-  "homepage": "https://github.com/0xc14m1z/redux-socket-dispatch#readme"
+  "homepage": "https://github.com/0xc14m1z/redux-socket-dispatch#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "npx": "^10.2.0"
+  }
 }

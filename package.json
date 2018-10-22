@@ -1,6 +1,6 @@
 {
   "name": "redux-socket-dispatch",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Redux middleware that dispatches actions to a websocket.",
   "main": "./dist/index.js",
   "files": [

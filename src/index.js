@@ -5,12 +5,13 @@ const middleware = socket => store => next => action => {
   return next(action)
 }
 
+const listenForRemoteActions = (socket, remoteActionType, store) =>
+  socket.on(remoteActionType, store.dispatch)
+
 const enhancer = (socket, remoteActionType) => createStore => (...args) => {
   const store = createStore(...args, applyMiddleware(middleware(socket)))
 
-  socket.on(remoteActionType, action => {
-    store.dispatch(action)
-  })
+  listenForRemoteActions(socket, remoteActionType, store)
 
   return store
 }

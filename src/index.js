@@ -16,10 +16,5 @@ const enhancer = (socket, remoteActionType) => createStore => (...args) => {
   return store
 }
 
-const reduxSocketDispatch = {
-  socketDispatchMiddleware: middleware,
-  socketDispatchEnhancer: enhancer
-}
-
-export default reduxSocketDispatch
-module.exports = reduxSocketDispatch
+export default enhancer
+module.exports = enhancer

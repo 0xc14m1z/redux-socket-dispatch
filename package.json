@@ -32,5 +32,8 @@
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "npx": "^10.2.0"
+  },
+  "dependencies": {
+    "redux": "^4.0.1"
   }
 }

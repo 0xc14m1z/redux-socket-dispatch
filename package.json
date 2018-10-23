@@ -28,9 +28,9 @@
   },
   "homepage": "https://github.com/0xc14m1z/redux-socket-dispatch#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
     "npx": "^10.2.0"
   },
   "dependencies": {

@@ -2,9 +2,9 @@ import { applyMiddleware } from 'redux'
 
 // take a socket and return a middleware that emits an event
 // through the socket of type `action.type` and the entire action as payload
-const middleware = socket => store => next => action => {
+const middleware = socket => store => next => ({ __remote__, ...action }) => {
   // avoid emitting actions marked as dispatched from the server
-  if ( !action.__remote__ ) socket.emit(action.type, action)
+  if ( !__remote__ ) socket.emit(action.type, action)
   return next(action)
 }
 
